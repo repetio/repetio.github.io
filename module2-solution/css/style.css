@@ -1,0 +1,80 @@
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 175%;
+	text-align: center;
+}
+
+body {
+	font-family: "Helvetica Neue";
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	width: 100%;
+	padding: 5px;
+}
+
+.card {
+	position: relative;
+	border: 1px solid black;
+	background: #e0e0eb;
+	padding: 2.5em 5px 5px 5px;
+	margin: 2%;
+}
+
+.card > .title {
+	display: inline-block;
+	margin: 0px;
+	padding: 5px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	/*width: 25%;*/
+	font-weight: bold;
+	text-align: center;
+	font-size: 125%;
+}
+
+p#title1 {
+	background: #ffe6cc;
+	color: #4d2800;
+}
+p#title2 {
+	background: #ffc6b3;
+	color: #802000;
+}
+p#title3 {
+	background: #b3d1ff;
+	color: #002966;
+}
+
+.row {
+	width: 100%
+}
+
+
+@media (min-width: 992px) {
+	.col-lg-4 {
+		float: left;
+		width: 29.33%;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.col-md-6 {
+		float: left;
+		width: 46%;
+	}
+
+	.col-md-12 {
+		float: left;
+		width: 96%;
+	}
+}
+
+
+

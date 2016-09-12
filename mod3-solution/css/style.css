@@ -1,0 +1,25 @@
+/* NAVBAR */
+.navbar-default .navbar-toggle:focus, .navbar-toggle:focus, .navbar-default, .navbar-toggle:hover {
+	background-color: #ffd9b3;
+}
+
+ul.navbar-nav {
+	margin: 0px -15px;
+}
+ul.navbar-nav li:hover {
+	background: #ffe6cc;
+	font-weight: bold;
+}
+div.navbar-collapse li {
+	text-align: center;
+	border-bottom: 1px solid gray;
+	background: #fff2e6;
+}
+.box {
+	box-sizing: border-box;
+	margin: 15px 0px;
+	background: #ffeee6;
+	padding: 10px;
+	overflow: hidden;
+	border-radius: 10px 10px 10px 10px;
+}

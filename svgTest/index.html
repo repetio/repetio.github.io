@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba de SVG</title>
+	<script type="text/javascript" src="jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+	<style>
+		#container {
+			position: relative;
+			width: 800px;
+			height: 800px;			
+			margin-left: auto;
+			margin-right: auto;
+			zoom: normal;
+		}
+
+		#case {
+			width: 800px;
+			height: 800px;
+			background: #F7F7F7;
+			/* -webkit-mask-box-image: url("black-shape.png"); */
+
+			-webkit-mask-image: url("mask_i6.png"); /* 370 590 */
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			/*-webkit-mask-size: 500px 500px; */
+		}
+		#img1 {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+		#overlay {
+			display: block;
+			position: absolute;
+			top: 105px;
+			left: 215px;
+			z-index: 100;
+			pointer-events: none;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function($) {
+			$('#img1').draggable({
+				containment: "#case", scroll: false
+			});
+		});
+
+
+		var doScale= function() {
+			if(this.scaled)
+				$("#container").css("zoom", "normal");
+			else
+				$("#container").css("zoom", "80%");
+			this.scaled= !this.scaled;
+			console.log("click");
+		}
+
+		doScale.scaled= false;
+	</script>
+</head>
+
+<body>
+	<input type="checkbox" name="" id="scale" onclick="doScale()" >Scale</input>
+	<div id="container">
+		<div id="case">
+			<img id="img1" src="image1.jpg" style="border: 1px solid black;" width="389" height="259">	
+		</div>
+	<img id="overlay" src="overlay_i6_2.png">
+	</div>
+</body>
+</html>
