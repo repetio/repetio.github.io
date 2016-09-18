@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Lunch Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <style>
+    .message {font-size: 1.3em;f ont-weight: bold;}
+    .m-normal {color: green;}
+    .m-alert {color: red;}
+    .t-normal { border: 1px solid green;}
+    .t-alert {border: 1px solid red;}
+  </style>
+</head>
+
+<body ng-app="LunchCheck">
+  <div class="container" ng-controller="LunchCheckController">
+    <h1>Lunch Checker</h1>
+
+    <div class="form-group">
+      <input id="lunch-menu" type="text" ng-model="lunchList" ng-class="{'t-normal': !message.alert && message.text!='', 't-alert': message.alert}" placeholder="list comma separated dishes you usually have for lunch" class="form-control">
+    </div>
+    <p>
+      <strong>empty items won't be considered as valid.</strong> ie: item1,,item2,item3 = 3 items
+    </p>
+    <div class="form-group">
+      <button class="btn btn-default" ng-click="checkList();">Check If Too Much</button>
+    </div>
+    <div class="form-group message" ng-class="{'m-normal': !message.alert, 'm-alert': message.alert}">
+      {{message.text}}
+    </div>
+  </div>
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
